@@ -30,15 +30,34 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+Stateful components depend on their state and have the ability to change their own state, re-rendering based on the changes. Extend the React.Component parent class, use a constructor to set the state and calling super. Render the UI and return JSX.
+
 2. Describe the different phases of the component lifecycle.
+
+The component lifecycle has three phases, birth/mountaing phase, growth/updating phase and death/unmounting phase where they render, pre-commit, and commit. This is done as the component mounts (gets built), updates (sets state and updates) and unmounts (taken off screen). 
 
 3. Demonstrate an understanding of class component lifecycle methods.
 
+"When a component does what it does, and why"
+Timing is important! 
+
+componentDidMount: invoked after component inserted on DOM and sets up state after rendering. This method is guaranteed to be called only once in the whole lifecycle , immediately after a component is mounted.
+
+componentDidUpdate: used for side effects and uses prevProps and prevState
+
+componentWillUnmount: performs cleanup, removes event listeners. 
+
 4. Define stateful logic.
+
+Any logic built into a component that deals with the state in a component, such as functions that handle click events, submissions, toggle, changes etc. You can use custom hooks to reuse stateful logic and keep your code DRY. 
 
 5. Describe how to test a React component with React Testing Library.
 
-You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
+The most important aspects of testing are set-up and framework. 
+
+Install and import the correct dependencies to start. Then, choose the appropriate testing methods, Integration (how different parts/components interact and work together), E2E (the whole app is tested in a user-simulated format), and Unit testing (isolated testing).
+
+Use the framework of Act, arrange, and assert. Set up code so that is may be tested, call a method or function that returns the result of interest, and assert if the expected matched the actual return.
 
 ## Instructions
 
@@ -54,10 +73,10 @@ _Please follow the setup instructions closely so that you can get everything up 
 
 **Basic set up**
 
-- [ ] Create a forked copy of this project
-- [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Create a forked copy of this project
+- [x] Add your team lead as collaborator on Github
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
 
 **Starting the server**
 
@@ -135,6 +154,6 @@ test("displays plants in cart", () => {
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete after receiving your pull-request
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
+- [x] Add your team lead as a reviewer on the pull-request
+- [x] Your team lead will count the project as complete after receiving your pull-request
