@@ -10,12 +10,12 @@ export default class PlantList extends Component {
     return (
       axios
         .get('http://localhost:3333/plants')
-        .then(res => this.setState({ plants: this.state.plants}) || console.log("results", res.data))
+        .then(res => this.setState({ plants: res.data.plantsData}) || console.log("api results", res.data.plantsData))
         .catch(err => console.log("Error: ", err))
     )
   };
 
-  
+
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
 
   render() {
