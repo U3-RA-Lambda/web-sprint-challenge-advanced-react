@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
-import Search from "./components/Search";
 
 import "./App.css";
 
@@ -44,7 +43,6 @@ function App() {
               </NavLink>
             </li>
           </ul>
-          <Search />
         </nav>
 
         

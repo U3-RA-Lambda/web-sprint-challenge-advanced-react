@@ -2,24 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from '../hooks/useForm';
 
 const Search = (props) => {
-    
+    const initialValues = {
+       searchInput: ""
+      };
     // const handleChanges = (e) => {
     //   setValues({ ...values, [e.target.name]: e.target.value });
     // };
-    const [handleChanges] = useForm(initialValue);
-    const [searchInput, setSearchInput] = useState("");
-    const [searchResults, setSearchResults] = useState("");
+    const [values, handleChanges] = useForm(initialValues);
+    const [searchResults, setSearchResults] = useState([]);
   
     const handleSubmit = (e) => {
       e.preventDefault();
     };
 
     useEffect(() => {
-        const results = res.data.plantsData.name.filter(plant =>
-          plant.toLowerCase().includes(searchInput.toLowerCase())
+
+        const results = this.state.plants.name.filter(plants =>
+          plants.toLowerCase().includes(values.searchInput.toLowerCase())
         );
         setSearchResults(results);
-      }, [searchInput]);
+      }, [values.searchInput]);
   
     return (
       <div className="search-container">
@@ -28,16 +30,16 @@ const Search = (props) => {
               name="searchInput" 
               type="text" 
               placeholder="Search plant names here" className="search-text"
-              value={searchInput}
+              value={values.searchInput}
               onChange={handleChanges} 
             />
             <ul>
                 {searchResults.localeCompare(item => (
-                    <li>{item}</li>
+                    <li key={item}>{item}</li>
                 ))}
             </ul>
       </div>   
     )
 };
-  
-  export default Search;
+
+export default Search;

@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Search from './Search';
 
 export default class PlantList extends Component {
   state = {
     plants: []
   };
 
+
+// class PlantList extends React.Component{
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       plants: []
+//     }
+//   }
+
+
   componentDidMount() {
-    return (
+  
       axios
         .get('http://localhost:3333/plants')
         .then(res => this.setState({ plants: res.data.plantsData}) || console.log("api results", res.data.plantsData))
         .catch(err => console.log("Error: ", err))
-    )
+  
   };
 
 
@@ -21,6 +33,7 @@ export default class PlantList extends Component {
   render() {
     return (
       <main className="plant-list">
+        <Search plants={this.plants} />
         {this.state?.plants?.map((plant) => (
           <div className="plant-card" key={plant.id}>
             <img className="plant-image" src={plant.img} alt={plant.name} />
@@ -46,3 +59,5 @@ export default class PlantList extends Component {
     );
   }
 }
+
+// export default PlantList;
