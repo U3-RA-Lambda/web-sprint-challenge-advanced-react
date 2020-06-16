@@ -17,7 +17,7 @@ const Search = (props) => {
 
     useEffect(() => {
 
-        const results = props.plants.name.filter(plants => 
+        const results = props.plants.filter(plants => 
             plants.toLowerCase().includes(values.searchInput.toLowerCase())
         );
         setSearchResults(results);
