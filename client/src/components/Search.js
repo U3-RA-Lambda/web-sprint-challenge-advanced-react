@@ -17,26 +17,30 @@ const Search = (props) => {
 
     useEffect(() => {
 
-        const results = this.state.plants.name.filter(plants =>
-          plants.toLowerCase().includes(values.searchInput.toLowerCase())
+        const results = props.plants.name.filter(plants => 
+            plants.toLowerCase().includes(values.searchInput.toLowerCase())
         );
         setSearchResults(results);
       }, [values.searchInput]);
   
     return (
       <div className="search-container">
-        <button className="search-btn" onSubmit={handleSubmit}> Search </button>
+        <label htmlFor="searchInput"> Search: </label>
             <input
               name="searchInput" 
               type="text" 
               placeholder="Search plant names here" className="search-text"
               value={values.searchInput}
-              onChange={handleChanges} 
+              onChange={handleChanges}
+              onSubmit={handleSubmit} 
             />
             <ul>
-                {searchResults.localeCompare(item => (
-                    <li key={item}>{item}</li>
+                {searchResults.map(item => (
+                    <li>{item}</li>
                 ))}
+                {/* {this.props.map(item => (
+                    <li>{item}</li>
+                ))} */}
             </ul>
       </div>   
     )

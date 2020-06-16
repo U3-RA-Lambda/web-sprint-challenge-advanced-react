@@ -166,7 +166,7 @@ button {
   cursor: pointer;
 }
 
-.search-btn {
+label {
   background: #ec5990;
   color: white;
   text-transform: uppercase;

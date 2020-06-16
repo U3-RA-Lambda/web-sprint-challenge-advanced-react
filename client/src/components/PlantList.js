@@ -33,7 +33,7 @@ export default class PlantList extends Component {
   render() {
     return (
       <main className="plant-list">
-        <Search plants={this.plants} />
+        <Search plants={this.state.plants} />
         {this.state?.plants?.map((plant) => (
           <div className="plant-card" key={plant.id}>
             <img className="plant-image" src={plant.img} alt={plant.name} />
