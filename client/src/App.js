@@ -43,7 +43,11 @@ function App() {
               </NavLink>
             </li>
           </ul>
+          <button className="search-btn">Search</button>
+          <input type="text" placeholder="Search plant names here" className="search-text"></input>
         </nav>
+
+        
         <Route
           exact
           path="/"

@@ -166,6 +166,23 @@ button {
   cursor: pointer;
 }
 
+.search-btn {
+  background: #ec5990;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 1px;
+  padding: 15px;
+  font-size: 12px;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.search-text {
+  margin-top: 10px;
+  width: 40%;
+}
+
 button:hover {
   background: #df2e6c;
 }
