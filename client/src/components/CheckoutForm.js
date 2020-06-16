@@ -21,7 +21,7 @@ const CheckoutForm = (props) => {
   // const handleChanges = (e) => {
   //   setValues({ ...values, [e.target.name]: e.target.value });
   // };
-  const[values, handleChanges] = useForm(initialValue);
+  const [values, handleChanges] = useForm(initialValue);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleSubmit = (e) => {
