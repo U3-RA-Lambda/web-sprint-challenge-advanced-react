@@ -25,7 +25,6 @@ const Search = (props) => {
   
     return (
       <div className="search-container">
-        <label htmlFor="searchInput"> Search: </label>
             <input
               name="searchInput" 
               type="text" 
